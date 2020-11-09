@@ -1,0 +1,30 @@
+# fly.toml file generated for appkata-minio on 2020-11-09T12:52:21Z
+
+app = "appkata-minio"
+
+
+[[services]]
+  internal_port = 9000
+  protocol = "tcp"
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = "80"
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = "443"
+
+  [[services.tcp_checks]]
+    interval = 10000
+    timeout = 2000
+
+[[mounts]]
+source="miniodata"
+destination="/data"
+
+
