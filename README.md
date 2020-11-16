@@ -93,7 +93,7 @@ When the deployment is complete, run `fly open` to browse to the server. MinIO h
 If you have the [MinIO Client](https://docs.min.io/docs/minio-client-quickstart-guide.html) installed, you can also set this up as an alias to connect to with:
 
 ```cmd
-mc alias set appkata https://appkata-minio.fly.dev/ appkataaccesskey appkatasecretket
+mc alias set appkata https://appkata-minio.fly.dev/ appkataaccesskey appkatasecretkey
 ```
 
 And proceed to administer the server. 
