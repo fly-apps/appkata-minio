@@ -101,4 +101,4 @@ And proceed to administer the server.
 
 ## Discuss
 
-* You can discuss this example on its dedicated [community.fly.io] topic.
+* You can discuss this example on its dedicated [Fly Community](https://community.fly.io/t/appkata-minio-s3-compatible-storage-with-fly/389) topic.
