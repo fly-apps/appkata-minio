@@ -2,6 +2,8 @@
 
 Deploy your own S3 compatible storage with MinIO and Fly
 
+[Read this guide on Fly.](https://fly.io/docs/app-guides/minio/)
+
 <!---- cut here --->
 
 ## Rationale
