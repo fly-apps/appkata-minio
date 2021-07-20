@@ -2,29 +2,36 @@
 
 app = "appkata-minio"
 
+kill_signal = "SIGINT"
+kill_timeout = 5
+
+[env]
+
+[mounts]
+  source="miniodata"
+  destination="/data"
 
 [[services]]
+  http_checks = []
   internal_port = 9000
   protocol = "tcp"
+  script_checks = []
 
   [services.concurrency]
     hard_limit = 25
     soft_limit = 20
+    type = "connections"
 
   [[services.ports]]
     handlers = ["http"]
-    port = "80"
+    port = 80
 
   [[services.ports]]
     handlers = ["tls", "http"]
-    port = "443"
+    port = 443
 
   [[services.tcp_checks]]
-    interval = 10000
-    timeout = 2000
-
-[[mounts]]
-source="miniodata"
-destination="/data"
-
-
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 6
+    timeout = "2s"
